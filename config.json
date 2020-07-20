@@ -1,0 +1,22 @@
+{
+  "theme": "default",
+  "segments": [
+    "virtual_env",
+    "environment",
+    "aws_profile",
+    "keybase",
+    "ssh",
+    "cwd",
+    "git",
+    "hg",
+    "jobs",
+    "root"
+  ],
+  "cwd": {
+    "max_depth": 15,
+    "full_cwd": true
+  },
+  "vcs": {
+    "show_symbol": true
+  }
+}
