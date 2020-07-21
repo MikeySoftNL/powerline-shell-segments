@@ -1,3 +1,6 @@
+
+git clone https://github.com/MikeySoftNL/powerline-shell-segments.git
+
 # Fonts
 The Powerline leverages Glyphs from Nerd Font, to be able to see them install a Nerd Font using the following methods.
 
@@ -15,8 +18,8 @@ brew cask install font-hack-nerd-font
 # In Powershell (as Administrator)
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Go-Mono.zip -OutFile Go-Mono.zip
 Expand-Archive .\Go-Mono.zip -DestinationPath Go-Mono
-foreach ($font in (gci .\Go-Mono\)) { Copy-Item -Destination "c:\windows\fonts" -Path $font.fullpath -Force }
 ```
+Install Fonts by double clicking each, or go to Settings → Fonts and drag and drop
 
 #### Configure Windows Terminal
 
@@ -59,6 +62,7 @@ example config
   "vcs": {
     "show_symbol": true
   }
+}
 ```
 
 # Copy custom segments
@@ -66,10 +70,10 @@ example config
 Get the location of your installed pip package
 
 ```console
-pip show powerline-shell | grep Location
-Copy the custom segments (*.py) from this repo to
+#pip show powerline-shell | grep Location
+#Copy the custom segments (*.py) from this repo to
 
-{location above}/powerline_shell/segments
+cp powerline-shell-segments/*.py $(pip show powerline-shell |  grep -oP '(?<=Location: ).*')/powerline_shell/segments -v
 ```
  
 
