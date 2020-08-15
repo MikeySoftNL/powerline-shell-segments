@@ -2,9 +2,9 @@
   "theme": "default",
   "segments": [
     "virtual_env",
+    "keybase",
     "environment",
     "aws_profile",
-    "keybase",
     "ssh",
     "cwd",
     "git",
@@ -13,7 +13,6 @@
     "root"
   ],
   "cwd": {
-    "max_depth": 15,
     "full_cwd": true
   },
   "vcs": {
