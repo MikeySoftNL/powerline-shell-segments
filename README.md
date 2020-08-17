@@ -41,7 +41,7 @@ Code ~/.config/powerline-shell/config.json
 ```
 
 ```json
-example config 
+example config
 {
   "theme": "default",
   "segments": [
@@ -76,7 +76,7 @@ Get the location of your installed pip package
 
 cp powerline-shell-segments/*.py $(pip show powerline-shell |  grep -oP '(?<=Location: ).*')/powerline_shell/segments -v
 ```
- 
+
 
 
 # Activate Powerline
