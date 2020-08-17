@@ -11,8 +11,8 @@ class Segment(BasicSegment):
                 f = open(os.environ.get("KUBECONFIG"), "r")
                 cluster=re.search('(?<=name: ).*',f.read(), re.IGNORECASE).group()
                 self.powerline.append(" {} {} ".format(k8s_glyph,cluster),
-                                  self.powerline.theme.AWS_PROFILE_FG,
-                                  self.powerline.theme.AWS_PROFILE_BG)
+                                  self.powerline.theme.EKS_FG,
+                                  self.powerline.theme.EKS_BG)
             except:
                 cluster=""
             

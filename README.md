@@ -37,8 +37,9 @@ mkdir -p ~/.config/powerline-shell && \
 powerline-shell --generate-config > ~/.config/powerline-shell/config.json
 
 #Edit config with editor of choice
-Code/vim/nano ~/.config/powerline-shell/config.json
+Code ~/.config/powerline-shell/config.json
 ```
+
 ```json
 example config 
 {
@@ -82,7 +83,7 @@ cp powerline-shell-segments/*.py $(pip show powerline-shell |  grep -oP '(?<=Loc
 ```console
 #Edit ~/.bashrc with editor of choice
 
-Code/vim/nano ~/.bashrc
+Code ~/.bashrc
 
 ## Powerline_shell
 function _update_ps1() {
@@ -92,6 +93,17 @@ function _update_ps1() {
 if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
+```
+
+Or in Fish-Shell
+```console
+Code ~/.config/fish/config.fish
+
+#Powerline-shell
+function fish_prompt
+    powerline-shell --shell bare $status
+end
+
 ```
 
 re-login
