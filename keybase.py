@@ -9,9 +9,9 @@ class Segment(BasicSegment):
 
         if KB_TEST:
             self.powerline.append(" kb {} ".format(KB_GLYPH) ,
-                                  239,
-                                  46)
+                                  self.powerline.theme.KB_FG,
+                                  self.powerline.theme.KBUP_BG)
         else:
             self.powerline.append(" kb {} ".format(KB_GLYPH) ,
-                                  239,
-                                  173)
+                                  self.powerline.theme.KB_FG,
+                                  self.powerline.theme.KBDOWN_BG)
