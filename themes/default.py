@@ -48,7 +48,7 @@ class Color(DefaultColor):
     EKS_FG = 7
 
     ENV_FG = 8
-    ENV_BG = 6    
+    ENV_BG = 6
 
     KB_FG = 8
     KBUP_BG = 2

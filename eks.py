@@ -5,7 +5,7 @@ import os, re
 class Segment(BasicSegment):
     def add_to_powerline(self):
         k8s_glyph="\u2388"
-        eks = os.environ.get("KUBECONFIG") 
+        eks = os.environ.get("KUBECONFIG")
         if eks:
             try:
                 f = open(os.environ.get("KUBECONFIG"), "r")
@@ -15,4 +15,3 @@ class Segment(BasicSegment):
                                   self.powerline.theme.EKS_BG)
             except:
                 cluster=""
-            
