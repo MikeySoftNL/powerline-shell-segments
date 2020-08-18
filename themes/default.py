@@ -69,20 +69,20 @@ class DefaultColor(object):
     BATTERY_LOW_BG = 196
     BATTERY_LOW_FG = 7
 
-    AWS_PROFILE_FG = 8
-    AWS_PROFILE_BG = 0
+    AWS_PROFILE_FG = 255
+    AWS_PROFILE_BG = 172
 
     AZ_PREFIX_FG = 0
-    AZ_PREFIX_BG = 7
+    AZ_PREFIX_BG = 195
 
-    EKS_BG = 8
-    EKS_FG = 7
+    EKS_BG = 21
+    EKS_FG = 255
 
-    ENV_FG = 8
-    ENV_BG = 6
+    ENV_FG = 188
+    ENV_BG = 56
 
-    KB_FG = 8
-    KBUP_BG = 2
+    KB_FG = 239
+    KBUP_BG = 46
     KBDOWN_BG = 11
 
     TIME_FG = 250
