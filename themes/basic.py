@@ -54,5 +54,8 @@ class Color(DefaultColor):
     KBUP_BG = 2
     KBDOWN_BG = 11
 
+    LINUX_FG = 7
+    LINUX_BG = 0
+
     TIME_FG = 8
     TIME_BG = 7

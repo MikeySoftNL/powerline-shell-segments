@@ -9,5 +9,5 @@ class Segment(BasicSegment):
             os.environ.get("ENVIRONMENT")
         if aws_profile:
             self.powerline.append(" {} {} ".format(AWS_GLYPH, os.path.basename(aws_profile)) ,
-                                  118,
-                                  56)
+                                  self.powerline.theme.ENV_FG,
+                                  self.powerline.theme.ENV_BG)

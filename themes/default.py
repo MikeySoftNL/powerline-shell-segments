@@ -85,6 +85,9 @@ class DefaultColor(object):
     KBUP_BG = 46
     KBDOWN_BG = 11
 
+    LINUX_FG = 214
+    LINUX_BG = 0
+
     TIME_FG = 250
     TIME_BG = 238
 
