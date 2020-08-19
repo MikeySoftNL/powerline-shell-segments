@@ -1,6 +1,7 @@
 {
   "theme": "default",
   "segments": [
+    "distri",
     "virtual_env",
     "keybase",
     "environment",
@@ -11,7 +12,6 @@
     "cwd",
     "git",
     "hg",
-    "jobs",
     "root"
   ],
   "cwd": {
