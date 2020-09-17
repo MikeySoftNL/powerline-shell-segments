@@ -5,13 +5,13 @@
     "virtual_env",
     "keybase",
     "environment",
-    "eks",
-    "aws_profile",
-    "azure_prefix",
+    "aws_credentials",
+    "aws_profile",    
     "ssh",
+    "hg",
     "cwd",
     "git",
-    "hg",
+    "newline",
     "root"
   ],
   "cwd": {

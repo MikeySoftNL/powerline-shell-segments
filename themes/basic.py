@@ -41,6 +41,11 @@ class Color(DefaultColor):
     AWS_PROFILE_FG = 8
     AWS_PROFILE_BG = 0
 
+    AWS_CRED_VALID_FG = 8
+    AWS_CRED_VALID_BG = 2
+    AWS_CRED_EXP_FG = 8
+    AWS_CRED_EXP_BG = 11
+
     AZ_PREFIX_FG = 0
     AZ_PREFIX_BG = 7
 
