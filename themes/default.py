@@ -72,6 +72,12 @@ class DefaultColor(object):
     AWS_PROFILE_FG = 255
     AWS_PROFILE_BG = 172
 
+    AWS_CRED_VALID_FG = 255
+    AWS_CRED_VALID_BG = 106
+    AWS_CRED_EXP_FG = 255
+    AWS_CRED_EXP_BG = 52
+
+
     AZ_PREFIX_FG = 0
     AZ_PREFIX_BG = 195
 
