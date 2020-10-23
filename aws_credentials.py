@@ -13,6 +13,8 @@ class Segment(BasicSegment):
         contents = f.read()
 
         x_security_token_expires = re.search('(?<=x_security_token_expires =)(.*)', contents)
+        expires = None
+        creds_valid = None
 
         if x_security_token_expires:
             token_expires = x_security_token_expires.groups()[0].strip()
