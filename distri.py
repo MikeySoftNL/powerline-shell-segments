@@ -6,8 +6,8 @@ RELEASE_DATA = {}
 class Segment(BasicSegment):
     def get_glyph(self, argument):
         Ubuntu_glyph = "\uf31c"
-        CentOS_glyph = "\uf304"       
-        RedHat_glyph = "\uf316" 
+        CentOS_glyph = "\uf304"
+        RedHat_glyph = "\uf316"
         Debian_glyph = "\uf306"
         Amazon_glyph = "\uf52c"
         Alpine_glyph = "\uf300"
@@ -29,7 +29,7 @@ class Segment(BasicSegment):
             for row in reader:
                 if row:
                     RELEASE_DATA[row[0]] = row[1]
-        
+
         if RELEASE_DATA["ID"] in ["debian", "raspbian"]:
             with open("/etc/debian_version") as f:
                 DEBIAN_VERSION = f.readline().strip()
@@ -44,5 +44,3 @@ class Segment(BasicSegment):
             " {} {} ".format(self.get_glyph(RELEASE_DATA["NAME"]) , RELEASE_DATA["VERSION_ID"]),
             self.segment_def.get("fg_color", self.powerline.theme.LINUX_FG),
             self.segment_def.get("bg_color", self.powerline.theme.LINUX_BG))
-
-
