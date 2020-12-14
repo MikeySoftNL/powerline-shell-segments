@@ -4,6 +4,7 @@
     "distri",
     "virtual_env",
     "keybase",
+    "eks",
     "environment",
     "aws_credentials",
     "aws_profile",    
@@ -12,6 +13,7 @@
     "cwd",
     "git",
     "newline",
+    "time",
     "root"
   ],
   "cwd": {

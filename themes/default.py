@@ -80,6 +80,8 @@ class DefaultColor(object):
 
     AZ_PREFIX_FG = 0
     AZ_PREFIX_BG = 195
+    AZ_PREFIX_EXP_FG = 255
+    AZ_PREFIX_EXP_BG = 130
 
     EKS_BG = 21
     EKS_FG = 255

@@ -48,6 +48,8 @@ class Color(DefaultColor):
 
     AZ_PREFIX_FG = 0
     AZ_PREFIX_BG = 7
+    AZ_PREFIX_EXP_FG = 15
+    AZ_PREFIX_EXP_BG = 1
 
     EKS_BG = 8
     EKS_FG = 7
