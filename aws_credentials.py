@@ -2,7 +2,7 @@ from ..utils import BasicSegment
 import os
 import re
 import dateutil.parser
-import datetime 
+import datetime
 
 class Segment(BasicSegment):
     def add_to_powerline(self):
