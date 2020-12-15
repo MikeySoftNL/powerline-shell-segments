@@ -20,6 +20,7 @@ class Segment(BasicSegment):
       with open("%s/.azure/azureProfile.json" % home, encoding='utf-8-sig') as f:
             data = json.load(f)
 
+      azAccount=None
       if "subscriptions" in data:
         for x in data["subscriptions"]:
           if x["isDefault"] == True:
