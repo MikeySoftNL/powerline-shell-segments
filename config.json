@@ -3,6 +3,7 @@
   "segments": [
     "distri",
     "virtual_env",
+    "terraform_version",
     "keybase",
     "eks",
     "environment",
