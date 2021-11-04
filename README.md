@@ -75,6 +75,12 @@ Get the location of your installed pip package
 #Copy the custom segments (*.py) from this repo to
 
 cp powerline-shell-segments/*.py $(pip show powerline-shell |  grep -oP '(?<=Location: ).*')/powerline_shell/segments -v
+cp powerline-shell-segments/themes/*.py $(pip show powerline-shell |  grep -oP '(?<=Location: ).*')/powerline_shell/themes -v
+
+# prereqs
+mkdir -p ~/.aws
+touch ~/.aws/config ~/.aws/credentials
+pip3 install python-dateutil
 ```
 
 

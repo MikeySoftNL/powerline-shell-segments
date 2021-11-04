@@ -3,7 +3,7 @@ import os
 import subprocess
 import re
 
-
+tf_version = None
 try:
     subprocess.call(["terraform"], stdout=open(os.devnull, 'wb'))
     tf_version = subprocess.Popen(["terraform version"], stdout=subprocess.PIPE, shell=True)
