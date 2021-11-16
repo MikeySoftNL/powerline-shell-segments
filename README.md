@@ -45,19 +45,24 @@ example config
 {
   "theme": "default",
   "segments": [
+    "distri",
     "virtual_env",
-    "environment",
-    "aws_profile",
+    "terraform_version",
     "keybase",
+    "eks",
+    "environment",
+    "aws_credentials",
+    "azure_profile",
+    "aws_profile",
     "ssh",
+    "hg",
     "cwd",
     "git",
-    "hg",
-    "jobs",
+    "newline",
+    "time",
     "root"
   ],
   "cwd": {
-    "max_depth": 15,
     "full_cwd": true
   },
   "vcs": {
@@ -75,12 +80,8 @@ Get the location of your installed pip package
 #Copy the custom segments (*.py) from this repo to
 
 cp powerline-shell-segments/*.py $(pip show powerline-shell |  grep -oP '(?<=Location: ).*')/powerline_shell/segments -v
-cp powerline-shell-segments/themes/*.py $(pip show powerline-shell |  grep -oP '(?<=Location: ).*')/powerline_shell/themes -v
 
-# prereqs
-mkdir -p ~/.aws
-touch ~/.aws/config ~/.aws/credentials
-pip3 install python-dateutil
+cp -v powerline-shell-segments/themes/*.py $(pip3 show powerline-shell | grep Location | awk -F ": " '{print $2}')/powerline_shell/themes/
 ```
 
 
