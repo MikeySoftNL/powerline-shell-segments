@@ -74,6 +74,7 @@ class DefaultColor(object):
 
     AWS_CRED_VALID_FG = 255
     AWS_CRED_VALID_BG = 106
+    AWS_CRED_HALFVALID_BG = 94
     AWS_CRED_EXP_FG = 255
     AWS_CRED_EXP_BG = 52
 
