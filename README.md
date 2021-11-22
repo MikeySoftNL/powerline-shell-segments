@@ -79,9 +79,9 @@ Get the location of your installed pip package
 #pip show powerline-shell | grep Location
 #Copy the custom segments (*.py) from this repo to
 
-cp powerline-shell-segments/*.py $(pip show powerline-shell |  grep -oP '(?<=Location: ).*')/powerline_shell/segments -v
+cp - powerline-shell-segments/*.py "$(pip show powerline-shell |  grep -oP '(?<=Location: ).*')/powerline_shell/segments"
 
-cp -v powerline-shell-segments/themes/*.py $(pip3 show powerline-shell | grep Location | awk -F ": " '{print $2}')/powerline_shell/themes/
+cp -v powerline-shell-segments/themes/*.py "$(pip3 show powerline-shell | grep Location | awk -F ": " '{print $2}')/powerline_shell/themes/"
 ```
 
 
