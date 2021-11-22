@@ -25,7 +25,15 @@ class Segment(BasicSegment):
             creds_valid.append(expires > CurrentDate)
 
         if False in creds_valid and True in creds_valid:
-            cred_text = " {} {} ".format(CRED_GLYPH_VALID, " | ".join(expiration))
+            i = 0
+            cred_text = []
+            while i < len(creds_valid):
+              if creds_valid[i]:
+                cred_text.append("\033[1;32;74m %s" % expiration[i])
+              else:
+                cred_text.append("\033[1;31;74m %s" % expiration[i])
+              i += 1
+            cred_text = " {} {} ".format(CRED_GLYPH_VALID," |".join(cred_text))
             self.powerline.append(" \ue7ad %s " % cred_text,
                 self.powerline.theme.AWS_CRED_VALID_FG,
                 self.powerline.theme.AWS_CRED_HALFVALID_BG)
