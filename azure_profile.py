@@ -16,11 +16,11 @@ class Segment(BasicSegment):
       with open("%s/.azure/accessTokens.json" % home, encoding='utf-8-sig') as f:
         token_data = json.load(f)
     elif os.path.isfile("%s/.azure/msal_token_cache.json" % home):
-      with open("%s/.azure/msal_token_cache.json" % home, encoding='utf-8-sig') as f:
-        token_data = json.load(f)
-        legacy = False
+        with open("%s/.azure/msal_token_cache.json" % home, encoding='utf-8-sig') as f:
+          token_data = json.load(f)
+          legacy = False
 
-    # Opening azureProfile JSON file
+    # # Opening azureProfile JSON file
     if os.path.isfile("%s/.azure/azureProfile.json" % home):
       with open("%s/.azure/azureProfile.json" % home, encoding='utf-8-sig') as f:
             data = json.load(f)
@@ -32,8 +32,7 @@ class Segment(BasicSegment):
             azAccount=x
 
 
-
-      token_expires = None
+      token_expires = []
       if token_data:
         if legacy:
           for token in token_data:
@@ -42,16 +41,17 @@ class Segment(BasicSegment):
         else:
           if "AccessToken" in token_data:
             for token in token_data["AccessToken"]:
-              if azAccount["tenantId"] == token_data["AccessToken"][token]["realm"]:
-                if "expires_on" in token_data["AccessToken"][token]:
-                  token_expires = str(datetime.datetime.fromtimestamp(int(token_data["AccessToken"][token]["expires_on"])))
+                if 'realm' in token_data["AccessToken"][token]:
+                    if "expires_on" in token_data["AccessToken"][token]:
+                      token_expires.append(datetime.datetime.fromtimestamp(int(token_data["AccessToken"][token]["expires_on"])))
 
+      most_recent=str(max(token_expires))
       creds_valid = None
       two_hours_ago = datetime.datetime.today() - datetime.timedelta(hours=2)
       expires_time = ""
       expires = None
-      if token_expires:
-        expires = datetime.datetime.strptime( dateutil.parser.parse(token_expires).strftime('%Y/%m/%d %H:%M:%S'), "%Y/%m/%d %H:%M:%S")
+      if most_recent:
+        expires = datetime.datetime.strptime( dateutil.parser.parse(most_recent).strftime('%Y/%m/%d %H:%M:%S'), "%Y/%m/%d %H:%M:%S")
         expires_time = "{} {}".format(CRED_GLYPH_VALID,expires.strftime("%H:%M:%S"))
         CurrentDate = datetime.datetime.now()
 
@@ -64,6 +64,6 @@ class Segment(BasicSegment):
             self.powerline.theme.AZ_PREFIX_FG,
             self.powerline.theme.AZ_PREFIX_BG)
         else:
-          self.powerline.append(" {} {} {}".format(AZURE_GLYPH, azAccount["name"], expires > two_hours_ago),
+          self.powerline.append(" {} {} {}".format(AZURE_GLYPH, azAccount["name"], expires_time),
             self.powerline.theme.AZ_PREFIX_EXP_FG,
             self.powerline.theme.AZ_PREFIX_EXP_BG)
