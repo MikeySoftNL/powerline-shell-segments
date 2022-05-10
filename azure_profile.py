@@ -45,7 +45,11 @@ class Segment(BasicSegment):
                     if "expires_on" in token_data["AccessToken"][token]:
                       token_expires.append(datetime.datetime.fromtimestamp(int(token_data["AccessToken"][token]["expires_on"])))
 
-      most_recent=str(max(token_expires))
+      if not token_expires == []:
+        most_recent=str(max(token_expires))
+      else:
+        most_recent=''
+
       creds_valid = None
       two_hours_ago = datetime.datetime.today() - datetime.timedelta(hours=2)
       expires_time = ""
