@@ -10,6 +10,7 @@ home = os.path.expanduser("~")
 aws_sso_folder = f'{home}/.aws/sso/cache'
 CRED_GLYPH_EXPIRED = "󰌾"
 CRED_GLYPH_VALID = "󰌿"
+AWS_GLYPH = "󰸏"
 
 files = glob.glob(f'{aws_sso_folder}/*.json')
 tokens = []
@@ -42,14 +43,14 @@ text = " | ".join(tokens)
 class Segment(BasicSegment):
     def add_to_powerline(self):
       if False in tokens_valid and True in tokens_valid:
-        self.powerline.append(" \ue7ad %s " % text,
+        self.powerline.append(f" {AWS_GLYPH} %s " % text,
                           self.powerline.theme.AWS_CRED_VALID_FG,
                           self.powerline.theme.AWS_CRED_HALFVALID_BG)
       elif True in tokens_valid:
-        self.powerline.append(" \ue7ad %s " % text,
+        self.powerline.append(f" {AWS_GLYPH} %s " % text,
                           self.powerline.theme.AWS_CRED_VALID_FG,
                           self.powerline.theme.AWS_CRED_VALID_BG)
       else:
-        self.powerline.append(" \ue7ad %s " % text,
+        self.powerline.append(f" {AWS_GLYPH} %s " % text,
                           self.powerline.theme.AWS_CRED_EXP_FG,
                           self.powerline.theme.AWS_CRED_EXP_BG)
