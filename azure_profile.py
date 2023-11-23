@@ -6,9 +6,9 @@ import datetime
 
 class Segment(BasicSegment):
   def add_to_powerline(self):
-    CRED_GLYPH_EXPIRED = "\uf83d"
-    CRED_GLYPH_VALID = "\uf83e"
-    AZURE_GLYPH = "\ufd03"
+    CRED_GLYPH_EXPIRED = "󰌾"
+    CRED_GLYPH_VALID = "󰌿"
+    AZURE_GLYPH = "󰠅"
     home = os.path.expanduser("~")
     token_data = None
     legacy = True
