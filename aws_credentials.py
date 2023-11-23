@@ -6,8 +6,8 @@ import datetime
 
 class Segment(BasicSegment):
     def add_to_powerline(self):
-        CRED_GLYPH_EXPIRED = "\uf83d"
-        CRED_GLYPH_VALID = "\uf83e"
+        CRED_GLYPH_EXPIRED = "󰌾"
+        CRED_GLYPH_VALID = "󰌿"
         contents = None
         home = os.path.expanduser("~")
         if os.path.isfile("%s/.aws/credentials" % home):
