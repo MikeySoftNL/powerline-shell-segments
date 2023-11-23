@@ -8,8 +8,8 @@ import dateutil.parser
 
 home = os.path.expanduser("~")
 aws_sso_folder = f'{home}/.aws/sso/cache'
-CRED_GLYPH_EXPIRED = "\uf83d"
-CRED_GLYPH_VALID = "\uf83e"
+CRED_GLYPH_EXPIRED = "󰌾"
+CRED_GLYPH_VALID = "󰌿"
 
 files = glob.glob(f'{aws_sso_folder}/*.json')
 tokens = []
