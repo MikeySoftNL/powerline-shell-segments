@@ -32,7 +32,7 @@ Install Fonts by double clicking each, or go to Settings → Fonts and drag and 
 
 # Powerline
 ```console
-pip install powerline-shell \
+pip install powerline-shell python-dateutil --break-system-packages \
 mkdir -p ~/.config/powerline-shell && \
 powerline-shell --generate-config > ~/.config/powerline-shell/config.json
 
